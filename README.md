@@ -67,8 +67,22 @@ sf org login web --alias my-org
 
 ### 2. Deploy the metadata
 
+This is a standard Salesforce DX (SFDX) project. The `sfdx-project.json` file at the root tells the Salesforce CLI which directories contain deployable metadata (in this case, everything under `force-app/`). The deploy command reads that config and pushes all components to your org in the correct order:
+
 ```bash
 sf project deploy start --target-org my-org
+```
+
+To preview what will be deployed without making changes:
+
+```bash
+sf project deploy preview --target-org my-org
+```
+
+If you only want to deploy specific components (e.g., just the flows):
+
+```bash
+sf project deploy start --target-org my-org --source-dir force-app/main/default/flows
 ```
 
 ### 3. Post-Deployment Setup
