@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <description>Helps prepare for meetings and summarize post meeting notes, events, opportunities and their creation</description>
+    <localActionLinks>
+        <genAiFunctionName>AnswerQuestionsWithKnowledge_16jfj000001N84L</genAiFunctionName>
+    </localActionLinks>
+    <localTopicLinks>
+        <genAiPluginName>Meeting_Prep_16jfj000001N84L</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Post_meeting_tasks_event_and_opportunity_creation_16jfj000001N84L</genAiPluginName>
+    </localTopicLinks>
+    <localTopics>
+        <fullName>Post_meeting_tasks_event_and_opportunity_creation_16jfj000001N84L</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Post meeting tasks, event and opportunity creation</description>
+        <developerName>Post_meeting_tasks_event_and_opportunity_creation_16jfj000001N84L</developerName>
+        <genAiPluginInstructions>
+            <description>Post meeting tasks, event and opportunity creation</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 1</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>ESK_Flow_for_Agent_179fj000001gvpJ</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>ESK_Flow_for_Agent_179fj000001gvpJ</fullName>
+            <description>Flow that creates events, tasks and opportunities based on meeting notes</description>
+            <developerName>ESK_Flow_for_Agent_179fj000001gvpJ</developerName>
+            <invocationTarget>ESK_Flow_for_Agent</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>ESK_Flow_for_Agent</localDeveloperName>
+            <masterLabel>ESK Flow for Agent</masterLabel>
+            <source>ESK_Flow_for_Agent</source>
+        </localActions>
+        <localDeveloperName>Post_meeting_tasks_event_and_opportunity_creation</localDeveloperName>
+        <masterLabel>Post meeting tasks, event and opportunity creation</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Post meeting tasks, event and opportunity creation</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>Meeting_Prep_16jfj000001N84L</fullName>
+        <aiPluginUtterances>
+            <developerName>utterance_0_1772556471527</developerName>
+            <language>en_US</language>
+            <masterLabel>utterance_0_1772556471527</masterLabel>
+            <utterance>prepare me to meet this contact</utterance>
+        </aiPluginUtterances>
+        <aiPluginUtterances>
+            <developerName>utterance_0_1772556484749</developerName>
+            <language>en_US</language>
+            <masterLabel>utterance_0_1772556484749</masterLabel>
+            <utterance>please summarize John Bond contact</utterance>
+        </aiPluginUtterances>
+        <canEscalate>false</canEscalate>
+        <description>Help meeting prep by providing summary of the contact</description>
+        <developerName>Meeting_Prep_16jfj000001N84L</developerName>
+        <genAiPluginInstructions>
+            <description>Help meeting prep by providing summary of the contact</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>To summarize a contact ALWAYS Use the following Agent Action: &quot;Meeting Prep&quot;</description>
+            <developerName>instructions_0_1772556680753</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1772556680753</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>ALWAYS  format response to include bullets and bolding to make it easier to read</description>
+            <developerName>instructions_0_1772556739749</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1772556739749</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Meeting_Prep_179fj000001gwIL</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>IdentifyRecordByName_179fj000001gwIL</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>SummarizeRecord_179fj000001gwIL</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>IdentifyObjectByName_179fj000001gwIL</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>QueryRecords_179fj000001gwIL</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>IdentifyRecordByName_179fj000001gwIL</fullName>
+            <description>Searches for Salesforce CRM records by name and returns a list of matching Salesforce CRM record IDs.</description>
+            <developerName>IdentifyRecordByName_179fj000001gwIL</developerName>
+            <invocationTarget>identifyRecordByName</invocationTarget>
+            <invocationTargetType>standardInvocableAction</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>IdentifyRecordByName</localDeveloperName>
+            <masterLabel>Identify Record by Name</masterLabel>
+            <source>EmployeeCopilot__IdentifyRecordByName</source>
+        </localActions>
+        <localActions>
+            <fullName>SummarizeRecord_179fj000001gwIL</fullName>
+            <description>Summarizes a single Salesforce CRM record. You must call summarizeRecord only if the user explicitly asks for a summary (e.g: &apos;Summary&apos;, &apos;Recap&apos;, &apos;Highlights&apos;). This action should be called only when there isn&apos;t a more specific summarization action.</description>
+            <developerName>SummarizeRecord_179fj000001gwIL</developerName>
+            <invocationTarget>getRecordSummarizationPrompt</invocationTarget>
+            <invocationTargetType>standardInvocableAction</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>SummarizeRecord</localDeveloperName>
+            <masterLabel>Summarize Record</masterLabel>
+            <progressIndicatorMessage>Summarizing</progressIndicatorMessage>
+            <source>EmployeeCopilot__SummarizeRecord</source>
+        </localActions>
+        <localActions>
+            <fullName>IdentifyObjectByName_179fj000001gwIL</fullName>
+            <description>Finds the Salesforce object API name by extracting an object name from the user input.</description>
+            <developerName>IdentifyObjectByName_179fj000001gwIL</developerName>
+            <invocationTarget>identifyObject</invocationTarget>
+            <invocationTargetType>standardInvocableAction</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>IdentifyObjectByName</localDeveloperName>
+            <masterLabel>Identify Object by Name</masterLabel>
+            <source>EmployeeCopilot__IdentifyObjectByName</source>
+        </localActions>
+        <localActions>
+            <fullName>QueryRecords_179fj000001gwIL</fullName>
+            <description>Finds and retrieves Salesforce CRM records based on user input and specific conditions, such as field values. This action automatically identifies the correct records and object type. e.g. &apos;Find all open opportunities created in the last 5 days sorted by created date.&apos;</description>
+            <developerName>QueryRecords_179fj000001gwIL</developerName>
+            <invocationTarget>queryRecords</invocationTarget>
+            <invocationTargetType>standardInvocableAction</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>QueryRecords</localDeveloperName>
+            <masterLabel>Query Records</masterLabel>
+            <source>EmployeeCopilot__QueryRecords</source>
+        </localActions>
+        <localActions>
+            <fullName>Meeting_Prep_179fj000001gwIL</fullName>
+            <description>This prompt helps me get ready for a meeting</description>
+            <developerName>Meeting_Prep_179fj000001gwIL</developerName>
+            <invocationTarget>Meeting_Prep</invocationTarget>
+            <invocationTargetType>generatePromptResponse</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Meeting_Prep</localDeveloperName>
+            <masterLabel>Meeting Prep</masterLabel>
+        </localActions>
+        <localDeveloperName>Meeting_Prep</localDeveloperName>
+        <masterLabel>Meeting Prep</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Help meeting prep by providing summary of the contact</scope>
+    </localTopics>
+    <masterLabel>Post Meeting Assistant</masterLabel>
+    <plannerActions>
+        <fullName>AnswerQuestionsWithKnowledge_16jfj000001N84L</fullName>
+        <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: “What is your return policy?” “How do I fix an issue?” or “What features does a product have?”</description>
+        <developerName>AnswerQuestionsWithKnowledge_16jfj000001N84L</developerName>
+        <invocationTarget>streamKnowledgeSearch</invocationTarget>
+        <invocationTargetType>standardInvocableAction</invocationTargetType>
+        <isConfirmationRequired>false</isConfirmationRequired>
+        <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+        <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
+        <masterLabel>Answer Questions with Knowledge</masterLabel>
+        <progressIndicatorMessage>Getting answers</progressIndicatorMessage>
+        <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+    </plannerActions>
+    <plannerSurfaces>
+        <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
+        <callRecordingAllowed>false</callRecordingAllowed>
+        <surface>SurfaceAction__Messaging</surface>
+        <surfaceType>Messaging</surfaceType>
+    </plannerSurfaces>
+    <plannerType>AiCopilot__ReAct</plannerType>
+</GenAiPlannerBundle>

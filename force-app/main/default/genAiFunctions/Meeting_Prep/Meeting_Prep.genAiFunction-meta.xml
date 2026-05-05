@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This prompt helps me get ready for a meeting</description>
+    <developerName>Meeting_Prep</developerName>
+    <invocationTarget>Meeting_Prep</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <localDeveloperName>Meeting_Prep</localDeveloperName>
+    <masterLabel>Meeting Prep</masterLabel>
+</GenAiFunction>

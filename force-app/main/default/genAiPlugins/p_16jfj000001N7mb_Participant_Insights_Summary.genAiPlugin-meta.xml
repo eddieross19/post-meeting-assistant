@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic is chosen when users request key insights or summaries about meeting participants.</description>
+    <developerName>p_16jfj000001N7mb_Participant_Insights_Summary</developerName>
+    <genAiFunctions>
+        <functionName>Personalization__PersonalizeContext</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the query is about participant insights, use Personalization__PersonalizeContext to retrieve summarized personalization data.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <localDeveloperName>p_16jfj000001N7mb_Participant_Insights_Summary</localDeveloperName>
+    <masterLabel>Participant Insights Summary</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only provide insights and summaries about meeting participants, such as their roles, past interactions, or relevant data. You cannot create agendas or follow-up tasks.</scope>
+</GenAiPlugin>

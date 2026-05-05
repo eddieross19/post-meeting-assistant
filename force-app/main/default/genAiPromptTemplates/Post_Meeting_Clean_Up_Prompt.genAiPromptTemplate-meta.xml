@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_14</activeVersionIdentifier>
+    <description>This prompt cleans up meeting notes so it can then be used by a flow to create tasks, events and opportunities</description>
+    <developerName>Post_Meeting_Clean_Up_Prompt</developerName>
+    <masterLabel>Post Meeting Clean Up Prompt</masterLabel>
+    <overridable>false</overridable>
+    <templateVersions>
+        <content>Provide raw json formatted output in the format from below.
+Based on raw meetings notes, analyze and populate this json 
+
+Meeting notes: &quot;&quot;&quot;{!$Input:Meeting_Notes}&quot;&quot;&quot;
+
+Json Format: 
+&quot;&quot;&quot;
+{
+ &quot;event&quot;: {
+  &quot;event_name&quot;: &quot;String&quot;,
+  &quot;event_date&quot;: &quot;ISO-8601 (YYYY-MM-DDThh:mm:ssZ)&quot;,
+  &quot;event_attendee&quot;: &quot;String&quot;
+ },
+ &quot;tasks&quot;: [
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;ISO-8601 (YYYY-MM-DD)&quot;,
+   &quot;task_priority&quot;: &quot;String (Low | Normal | High)&quot;
+  },
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;ISO-8601 (YYYY-MM-DD)&quot;,
+   &quot;task_priority&quot;: &quot;String (Low | Medium | High)&quot;
+  }
+ ],
+ &quot;opportunity&quot;: {
+  &quot;opportunity_name&quot;: &quot;String&quot;,
+  &quot;opportunity_close_date&quot;: &quot;ISO-8601 (YYYY-MM-DD)&quot;,
+  &quot;opportunity_amount&quot;: &quot;Float / Decimal&quot;
+ }
+}
+&quot;&quot;&quot;
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Meeting_Notes</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Meeting Notes</masterLabel>
+            <referenceName>Input:Meeting_Notes</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Provide raw json formatted output in the format from below.
+Based on raw meetings notes, analyze and populate this json 
+
+Meeting notes: &quot;&quot;&quot;{!$Input:Meeting_Notes}&quot;&quot;&quot;
+
+Json Format: 
+&quot;&quot;&quot;
+{
+&quot;account_name&quot;: &quot;String&quot;, 
+ &quot;event&quot;: {
+  &quot;event_name&quot;: &quot;String&quot;,
+  &quot;event_date&quot;: &quot;ISO-8601 (YYYY-MM-DDThh:mm:ssZ)&quot;,
+  &quot;event_attendee&quot;: &quot;String&quot;
+ },
+ &quot;tasks&quot;: [
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;ISO-8601 (YYYY-MM-DD)&quot;,
+   &quot;task_priority&quot;: &quot;String (Low | Normal | High)&quot;
+  },
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;ISO-8601 (YYYY-MM-DD)&quot;,
+   &quot;task_priority&quot;: &quot;String (Low | Medium | High)&quot;
+  }
+ ],
+ &quot;opportunity&quot;: {
+  &quot;opportunity_name&quot;: &quot;String&quot;,
+  &quot;opportunity_close_date&quot;: &quot;ISO-8601 (YYYY-MM-DD)&quot;,
+  &quot;opportunity_amount&quot;: &quot;Float / Decimal&quot;
+ }
+}
+&quot;&quot;&quot;
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Meeting_Notes</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Meeting Notes</masterLabel>
+            <referenceName>Input:Meeting_Notes</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_2</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Provide raw json output without any additional formatting
+Based on raw meetings notes, analyze and populate this json 
+
+Meeting notes: &quot;&quot;&quot;{!$Input:Meeting_Notes}&quot;&quot;&quot;
+
+Json Format: 
+&quot;&quot;&quot;
+{
+ &quot;event&quot;: {
+  &quot;event_name&quot;: &quot;String&quot;,
+  &quot;event_date&quot;: &quot;ISO-8601 (YYYY-MM-DDThh:mm:ssZ)&quot;,
+  &quot;event_attendee&quot;: &quot;String&quot;
+ },
+ &quot;tasks&quot;: [
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;ISO-8601 (YYYY-MM-DD)&quot;,
+   &quot;task_priority&quot;: &quot;String (Low | Normal | High)&quot;
+  },
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;ISO-8601 (YYYY-MM-DD)&quot;,
+   &quot;task_priority&quot;: &quot;String (Low | Medium | High)&quot;
+  }
+ ],
+ &quot;opportunity&quot;: {
+  &quot;opportunity_name&quot;: &quot;String&quot;,
+  &quot;opportunity_close_date&quot;: &quot;ISO-8601 (YYYY-MM-DD)&quot;,
+  &quot;opportunity_amount&quot;: &quot;Float / Decimal&quot;
+ }
+}
+&quot;&quot;&quot;
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Meeting_Notes</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Meeting Notes</masterLabel>
+            <referenceName>Input:Meeting_Notes</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude45Sonnet</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_3</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>{
+ &quot;event&quot;: {
+  &quot;event_name&quot;: &quot;String&quot;,
+  &quot;event_date&quot;: &quot;ISO-8601&quot;,
+  &quot;event_attendee&quot;: &quot;String&quot;
+ },
+ &quot;tasks&quot;: [
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;ISO-8601&quot;,
+   &quot;task_priority&quot;: &quot;String&quot;
+  }
+ ],
+ &quot;opportunities&quot;: [
+  {
+   &quot;opportunity_name&quot;: &quot;String&quot;,
+   &quot;opportunity_close_date&quot;: &quot;ISO-8601&quot;,
+   &quot;opportunity_amount&quot;: &quot;Decimal&quot;
+  },
+  {
+   &quot;opportunity_name&quot;: &quot;String&quot;,
+   &quot;opportunity_close_date&quot;: &quot;ISO-8601&quot;,
+   &quot;opportunity_amount&quot;: &quot;Decimal&quot;
+  }
+ ]
+}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Meeting_Notes</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Meeting Notes</masterLabel>
+            <referenceName>Input:Meeting_Notes</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude45Sonnet</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_4</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>{
+ &quot;event&quot;: {
+  &quot;event_name&quot;: &quot;String&quot;,
+  &quot;event_date&quot;: &quot;ISO-8601 (YYYY-MM-DDThh:mm:ssZ)&quot;,
+  &quot;event_attendee&quot;: &quot;String&quot;
+ },
+ &quot;tasks&quot;: [
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;ISO-8601 (YYYY-MM-DD)&quot;,
+   &quot;task_priority&quot;: &quot;String (Low | Normal | High)&quot;
+  }
+ ],
+ &quot;opportunities&quot;: [
+  {
+   &quot;opportunity_name&quot;: &quot;String&quot;,
+   &quot;opportunity_close_date&quot;: &quot;ISO-8601 (YYYY-MM-DD)&quot;,
+   &quot;opportunity_amount&quot;: &quot;Decimal/Number&quot;
+  }
+ ]
+}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Meeting_Notes</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Meeting Notes</masterLabel>
+            <referenceName>Input:Meeting_Notes</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude45Sonnet</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_5</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>{
+ &quot;event&quot;: {
+  &quot;event_name&quot;: &quot;String&quot;,
+  &quot;event_date&quot;: &quot;2026-03-04T10:00:00Z&quot;,
+  &quot;event_attendee&quot;: &quot;String&quot;
+ },
+ &quot;tasks&quot;: [
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;2026-03-10&quot;,
+   &quot;task_priority&quot;: &quot;High&quot;
+  }
+ ],
+ &quot;opportunities&quot;: [
+  {
+   &quot;opportunity_name&quot;: &quot;String&quot;,
+   &quot;opportunity_close_date&quot;: &quot;2026-03-31&quot;,
+   &quot;opportunity_amount&quot;: 50000
+  }
+ ]
+}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Meeting_Notes</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Meeting Notes</masterLabel>
+            <referenceName>Input:Meeting_Notes</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude45Sonnet</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_6</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>{
+ &quot;event&quot;: {
+  &quot;event_name&quot;: &quot;Review Meeting&quot;,
+  &quot;event_date&quot;: &quot;2026-03-04 10:00:00&quot;,
+  &quot;event_attendee&quot;: &quot;Advisor Marcus&quot;
+ },
+ &quot;tasks&quot;: [
+  {
+   &quot;task_name&quot;: &quot;Follow up on Annuity&quot;,
+   &quot;task_due_date&quot;: &quot;2026-03-10&quot;,
+   &quot;task_priority&quot;: &quot;High&quot;
+  }
+ ],
+ &quot;opportunities&quot;: [
+  {
+   &quot;opportunity_name&quot;: &quot;Large FIA Rollover&quot;,
+   &quot;opportunity_close_date&quot;: &quot;2026-04-15&quot;,
+   &quot;opportunity_amount&quot;: 250000
+  }
+ ]
+}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Meeting_Notes</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Meeting Notes</masterLabel>
+            <referenceName>Input:Meeting_Notes</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude45Sonnet</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_7</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>{
+ &quot;event&quot;: {
+  &quot;event_name&quot;: &quot;Product Review Meeting&quot;,
+  &quot;event_date&quot;: &quot;2026-03-04T10:00:00Z&quot;,
+  &quot;event_attendee&quot;: &quot;Marcus Thorne&quot;
+ },
+ &quot;tasks&quot;: [
+  {
+   &quot;task_name&quot;: &quot;Send Annuity Illustration&quot;,
+   &quot;task_due_date&quot;: &quot;2026-03-11&quot;,
+   &quot;task_priority&quot;: &quot;High&quot;
+  }
+ ],
+ &quot;opportunities&quot;: [
+  {
+   &quot;opportunity_name&quot;: &quot;Miller Family FIA&quot;,
+   &quot;opportunity_close_date&quot;: &quot;2026-04-15&quot;,
+   &quot;opportunity_amount&quot;: 500000
+  }
+ ]
+}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Meeting_Notes</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Meeting Notes</masterLabel>
+            <referenceName>Input:Meeting_Notes</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude45Sonnet</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_8</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>{
+ &quot;event&quot;: {
+  &quot;event_name&quot;: &quot;String&quot;,
+  &quot;event_date&quot;: &quot;2026-03-04T10:00:00Z&quot;,
+  &quot;event_attendee&quot;: &quot;String&quot;
+ },
+ &quot;tasks&quot;: [
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;2026-03-10&quot;,
+   &quot;task_priority&quot;: &quot;High&quot;
+  }
+ ],
+ &quot;opportunities&quot;: [
+  {
+   &quot;opportunity_name&quot;: &quot;String&quot;,
+   &quot;opportunity_close_date&quot;: &quot;2026-03-31&quot;,
+   &quot;opportunity_amount&quot;: 1000
+  }
+ ]
+}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Meeting_Notes</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Meeting Notes</masterLabel>
+            <referenceName>Input:Meeting_Notes</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude45Sonnet</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_9</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Provide raw json formatted output in the format from below.
+Based on raw meetings notes, analyze and populate this json 
+
+Meeting notes: &quot;&quot;&quot;{!$Input:Meeting_Notes}&quot;&quot;&quot;
+
+Json Format: 
+
+{
+ &quot;event&quot;: {
+  &quot;event_name&quot;: &quot;String&quot;,
+  &quot;event_date&quot;: &quot;2026-03-04T10:00:00Z&quot;,
+  &quot;event_attendee&quot;: &quot;String&quot;
+ },
+ &quot;tasks&quot;: [
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;2026-03-10&quot;,
+   &quot;task_priority&quot;: &quot;High&quot;
+  }
+ ],
+ &quot;opportunities&quot;: [
+  {
+   &quot;opportunity_name&quot;: &quot;String&quot;,
+   &quot;opportunity_close_date&quot;: &quot;2026-03-31&quot;,
+   &quot;opportunity_amount&quot;: 1000
+  }
+ ]
+}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Meeting_Notes</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Meeting Notes</masterLabel>
+            <referenceName>Input:Meeting_Notes</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude45Sonnet</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_10</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>{
+ &quot;event&quot;: {
+  &quot;event_name&quot;: &quot;String&quot;,
+  &quot;event_date&quot;: &quot;2026-03-04T10:00:00Z&quot;,
+  &quot;event_attendee&quot;: &quot;String&quot;
+ },
+ &quot;tasks&quot;: [
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;2026-03-10&quot;,
+   &quot;task_priority&quot;: &quot;High&quot;
+  }
+ ],
+ &quot;opportunities&quot;: [
+  {
+   &quot;opportunity_name&quot;: &quot;String&quot;,
+   &quot;opportunity_close_date&quot;: &quot;2026-03-31&quot;,
+   &quot;opportunity_amount&quot;: 1000
+  }
+ ]
+}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Meeting_Notes</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Meeting Notes</masterLabel>
+            <referenceName>Input:Meeting_Notes</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude45Sonnet</primaryModel>
+        <status>Draft</status>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_11</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Provide raw json formatted output in the format from below.
+Based on raw meetings notes, analyze and populate this json 
+
+Meeting notes: &quot;&quot;&quot;{!$Input:Meeting_Notes}&quot;&quot;&quot;
+
+Json Format: 
+
+{
+ &quot;event&quot;: {
+  &quot;event_name&quot;: &quot;String&quot;,
+  &quot;event_date&quot;: &quot;2026-03-04T10:00:00Z&quot;,
+  &quot;event_attendee&quot;: &quot;String&quot;
+ },
+ &quot;tasks&quot;: [
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;2026-03-10&quot;,
+   &quot;task_priority&quot;: &quot;High&quot;
+    &quot;assigned_to_id&quot;: &quot;005XXXXXXXXXXXXXXX&quot;
+  }
+ ],
+ &quot;opportunities&quot;: [
+  {
+   &quot;opportunity_name&quot;: &quot;String&quot;,
+   &quot;opportunity_close_date&quot;: &quot;2026-03-31&quot;,
+   &quot;opportunity_amount&quot;: 1000
+  }
+ ]
+}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Meeting_Notes</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Meeting Notes</masterLabel>
+            <referenceName>Input:Meeting_Notes</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude45Sonnet</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_13</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Provide raw json formatted output in the format from below.
+Based on raw meetings notes, analyze and populate this json 
+
+Meeting notes: &quot;&quot;&quot;{!$Input:Meeting_Notes}&quot;&quot;&quot;
+
+Json Format: 
+
+{
+ &quot;event&quot;: {
+  &quot;event_name&quot;: &quot;String&quot;,
+  &quot;event_date&quot;: &quot;2026-03-04T10:00:00Z&quot;,
+  &quot;event_attendee&quot;: &quot;String&quot;
+ },
+ &quot;tasks&quot;: [
+  {
+   &quot;task_name&quot;: &quot;String&quot;,
+   &quot;task_due_date&quot;: &quot;2026-03-10&quot;,
+   &quot;task_priority&quot;: &quot;High&quot;
+    &quot;assigned_to_user_name&quot;: &quot;sarah jenks&quot;
+  }
+ ],
+ &quot;opportunities&quot;: [
+  {
+   &quot;opportunity_name&quot;: &quot;String&quot;,
+   &quot;opportunity_close_date&quot;: &quot;2026-03-31&quot;,
+   &quot;opportunity_amount&quot;: 1000
+  }
+ ]
+}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Meeting_Notes</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Meeting Notes</masterLabel>
+            <referenceName>Input:Meeting_Notes</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude45Sonnet</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_14</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

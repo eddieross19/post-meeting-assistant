@@ -1,0 +1,14 @@
+{
+  "required" : [ "meetingnotesinputsforagent" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "meetingnotesinputsforagent" : {
+      "title" : "meetingnotesinputsforagent",
+      "description" : "this is the user input that creates tasks, events and opportunities ",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

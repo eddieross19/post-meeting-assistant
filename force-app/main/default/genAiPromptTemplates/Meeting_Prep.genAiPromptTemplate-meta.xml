@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_5</activeVersionIdentifier>
+    <description>This prompt helps me get ready for a meeting</description>
+    <developerName>Meeting_Prep</developerName>
+    <masterLabel>Meeting Prep</masterLabel>
+    <overridable>false</overridable>
+    <templateVersions>
+        <content>You are assisting wholesalers prepare for meetings by providing summaries of the contacts. 
+
+Always include information from the information below. Don&apos;t hallucinate or create information that aren&apos;t real. 
+
+{!$Input:Contact.Name}
+{!$Input:Contact.Birthdate}
+ {!$Input:Contact.LastActivityDate}
+{!$Input:Contact.Title}
+
+{!$RelatedList:Contact.Opportunities.Records}
+{!$RelatedList:Contact.Cases.Records}
+{!$Input:Contact.Account.Name}
+{!$Input:Contact.Account.AnnualRevenue}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Draft</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <description>Gets a related list for the specified parent record id and related list name</description>
+            <label>Opportunities</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Opportunities</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Contact.Id}</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Contact.Opportunities.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <description>Gets a related list for the specified parent record id and related list name</description>
+            <label>Cases</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Cases</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Contact.Id}</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Contact.Cases.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are assisting wholesalers prepare for meetings by providing summaries of the contacts. 
+
+
+If {!$User.Department} is 
+Always include information from the information below. Don&apos;t hallucinate or create information that aren&apos;t real. 
+
+{!$Input:Contact.Name}
+{!$Input:Contact.Birthdate}
+ {!$Input:Contact.LastActivityDate}
+{!$Input:Contact.Title}
+
+{!$RelatedList:Contact.Opportunities.Records}
+{!$RelatedList:Contact.Cases.Records}
+{!$Input:Contact.Account.Name}
+{!$Input:Contact.Account.AnnualRevenue}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <description>Gets a related list for the specified parent record id and related list name</description>
+            <label>Opportunities</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Opportunities</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Contact.Id}</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Contact.Opportunities.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <description>Gets a related list for the specified parent record id and related list name</description>
+            <label>Cases</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Cases</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Contact.Id}</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Contact.Cases.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_2</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are assisting wholesalers prepare for meetings by providing summaries of the contacts. 
+
+
+Generate the Contact summary in Rich Text. For every related record mentioned (Accounts, Opportunities, or Cases), you must create a clickable hyperlink using the following rules:
+URL Structure: Use the relative Salesforce path: /[RecordID].
+HTML Syntax: Use the anchor tag: &lt;a href=&quot;/INSERT_RECORD_ID_HERE&quot;&gt;INSERT_RECORD_NAME_HERE&lt;/a&gt;.
+Visuals: Use bolding for key metrics and bullet points for lists of related records.
+Constraint: Never display a raw 15 or 18-character ID in the text; always mask it behind the record&apos;s name.
+
+
+If {!$User.Department} is 
+Always include information from the information below. Don&apos;t hallucinate or create information that aren&apos;t real. 
+
+{!$Input:Contact.Name}
+{!$Input:Contact.Birthdate}
+ {!$Input:Contact.LastActivityDate}
+{!$Input:Contact.Title}
+
+{!$RelatedList:Contact.Opportunities.Records}
+{!$RelatedList:Contact.Cases.Records}
+{!$Input:Contact.Account.Name}
+{!$Input:Contact.Account.AnnualRevenue}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <description>Gets a related list for the specified parent record id and related list name</description>
+            <label>Cases</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Contact.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Cases</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Contact.Cases.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <description>Gets a related list for the specified parent record id and related list name</description>
+            <label>Opportunities</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Contact.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Opportunities</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Contact.Opportunities.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_3</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are assisting wholesalers prepare for meetings by providing summaries of the contacts. 
+
+Always follow these rules:
+1- Generate the Contact summary in Rich Text. 
+2-For every related record mentioned (Accounts, Opportunities, or Cases), you must create a clickable hyperlink using the following rules:
+-URL Structure: Use the relative Salesforce path: /[RecordID].
+-HTML Syntax: Use the anchor tag: &lt;a href=&quot;/INSERT_RECORD_ID_HERE&quot;&gt;INSERT_RECORD_NAME_HERE&lt;/a&gt;.
+-Visuals: Use bolding for key metrics and bullet points for lists of related records.
+-Constraint: Never display a raw 15 or 18-character ID in the text; always mask it behind the record&apos;s name.
+
+3- Always include information from the information below. Don&apos;t hallucinate or create information that aren&apos;t real. 
+
+{!$Input:Contact.Name}
+{!$Input:Contact.Birthdate}
+ {!$Input:Contact.LastActivityDate}
+{!$Input:Contact.Title}
+
+{!$RelatedList:Contact.Opportunities.Records}
+{!$RelatedList:Contact.Cases.Records}
+{!$Input:Contact.Account.Name}
+{!$Input:Contact.Account.AnnualRevenue}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <description>Gets a related list for the specified parent record id and related list name</description>
+            <label>Opportunities</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Contact.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Opportunities</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Contact.Opportunities.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <description>Gets a related list for the specified parent record id and related list name</description>
+            <label>Cases</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Contact.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Cases</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Contact.Cases.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_4</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are assisting wholesalers prepare for meetings by providing summaries of the contacts. 
+
+Always follow these rules:
+1- Generate the Contact summary in Rich Text. 
+2-For every related record mentioned (Accounts, Opportunities, or Cases), you must create a clickable hyperlink using the following rules:
+&quot;Generate the summary using HTML tags only.
+Use &lt;strong&gt; for bold text.
+Use &lt;ul&gt; and &lt;li&gt; for bullet points.
+For the Contact Name and any related records, you must include a link using this exact syntax: &lt;a href=&quot;/RECORD_ID_HERE&quot;&gt;RECORD_NAME_HERE&lt;/a&gt;.
+Important: Do not use Markdown (no ** or #).&quot;
+
+
+3- Always include information from the information below. Don&apos;t hallucinate or create information that aren&apos;t real. 
+
+{!$Input:Contact.Name}
+{!$Input:Contact.Birthdate}
+ {!$Input:Contact.LastActivityDate}
+{!$Input:Contact.Title}
+
+{!$RelatedList:Contact.Opportunities.Records}
+{!$RelatedList:Contact.Cases.Records}
+{!$Input:Contact.Account.Id}
+{!$Input:Contact.Account.Name}
+{!$Input:Contact.Account.AnnualRevenue}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <description>Gets a related list for the specified parent record id and related list name</description>
+            <label>Opportunities</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Contact.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Opportunities</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Contact.Opportunities.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <description>Gets a related list for the specified parent record id and related list name</description>
+            <label>Cases</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Contact.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Cases</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Contact.Cases.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Cu2nO9dZJGQhCINWuo84fInx8tp67jvn2BV28AMqCMY=_5</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

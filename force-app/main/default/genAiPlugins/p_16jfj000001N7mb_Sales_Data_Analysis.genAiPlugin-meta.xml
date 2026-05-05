@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic is used when users request analysis of sales trends for life and annuity products.</description>
+    <developerName>p_16jfj000001N7mb_Sales_Data_Analysis</developerName>
+    <genAiFunctions>
+        <functionName>DataCloudAgent__CdpRtdgStatus</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>DataCloudAgent__CdpRtGetIdMap</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the query is about sales trends, use DataCloudAgent__CdpRtdgStatus to fetch RTDG Status of a datagraph.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>To retrieve ID mappings for analysis, use DataCloudAgent__CdpRtGetIdMap.</description>
+        <developerName>instruction_1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_1</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <localDeveloperName>p_16jfj000001N7mb_Sales_Data_Analysis</localDeveloperName>
+    <masterLabel>Sales Data Analysis</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only analyze sales trend data for life and annuity products and provide insights. You cannot create agendas or follow-up tasks.</scope>
+</GenAiPlugin>

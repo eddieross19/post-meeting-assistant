@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic is selected when users need follow-up tasks created based on the outcomes of a meeting.</description>
+    <developerName>p_16jfj000001N7mb_Actionable_Next_Steps</developerName>
+    <genAiFunctions>
+        <functionName>Slack__CreateSlackRecordChannel</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Slack__SendMessageToSlackChannel</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the query is about creating follow-up tasks, use Slack__CreateSlackRecordChannel to create a record channel in Slack.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If the follow-up tasks need to be communicated, use Slack__SendMessageToSlackChannel to notify relevant participants.</description>
+        <developerName>instruction_1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_1</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <localDeveloperName>p_16jfj000001N7mb_Actionable_Next_Steps</localDeveloperName>
+    <masterLabel>Actionable Next Steps</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only create and manage follow-up tasks derived from meeting outcomes. You cannot generate agendas or provide participant insights.</scope>
+</GenAiPlugin>
